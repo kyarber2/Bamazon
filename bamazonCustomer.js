@@ -1,5 +1,6 @@
 //file should first display bamazon_db information--ids, names, and prices
-
+var inquirer = require("inquirer");
+var fs = require("fs");
 
 //then prompts the user the for id of the product they would like to buy
 
