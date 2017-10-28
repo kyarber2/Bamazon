@@ -108,37 +108,13 @@ var quantitySelector = function(){
 	inquirer.prompt([
 		{
 	    type: "string",
-	    name: "itemID",
+	    name: "quantity",
 	    message: "How many would you like to purchase?",
 	    input: ''
 		}
 	]).then(function(input) {
 		console.log(input);
-	  // if/then function based on userchoices
-				 //  if (choices.userSelection[0] === '1') {
-				 //  	 console.log('1');
-				 //  	 //function that 
-		  	//   } else if (choices.userSelection[0] === '2') {
-		  	//   	console.log('2');
-		  	//   } else if (choices.userSelection[0] === '3') {
-		  	//   	console.log('3');
-			  // } else if (choices.userSelection[0] === '4') {
-		  	//   	console.log('4');
-			  // } else if (choices.userSelection[0] === '5') {
-		  	//   	console.log('5');
-		  	//   } else if (choices.userSelection[0] === '6') {
-		  	//   	console.log('6');
-		  	//   } else if (choices.userSelection[0] === '7') {
-		  	//   	console.log('7');
-		  	//   } else if (choices.userSelection[0] === '8') {
-		  	//   	console.log('8');
-		  	//   } else if (choices.userSelection[0] === '9') {
-		  	//   	console.log('9');
-		  	//   } else if (choices.userSelection[0] === '10') {
-		  	//   	console.log('10');
-		  	//   	}else if (choices.userSelection[0] === 'exit') {
-			  // 	console.log('Your session has ended. Come back soon!');
-			  //}
+	 //function to compare total requested with total in database
 		});
 }
 
