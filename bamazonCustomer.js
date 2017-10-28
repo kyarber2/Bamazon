@@ -32,7 +32,9 @@ var server = app.listen(3000, function () {
 
 function readProducts() {
   console.log("Selecting all products...\n");
-  connection.query("SELECT * FROM products", function(err, res) {
+  //mysql> SELECT name, birth FROM pet;
+  // RowDataPacket { id: 1, product_name: 'Coconut Water' },
+  connection.query("SELECT id, product_name FROM products", function(err, res) {
     if (err) throw err;
     // Log all results of the SELECT statement
     console.log(res);
@@ -41,6 +43,55 @@ function readProducts() {
 }
 
 readProducts();
+
+// runs inquirer and asks the user a series of questions whose replies are stored within the variable answers inside of the .then statement.
+inquirer.prompt([
+	{
+    type: "checkbox",
+    name: "userSelection",
+    message: "Which product would you like to purchase?",
+    choices: [
+    '1', 
+    '2', 
+    '3', 
+    '4', 
+    '5',
+    '6',
+    '7',
+    '8',
+    '9',
+    '10',
+    'exit']
+	}
+]).then(function(choices) {
+	console.log(choices);
+  // if/then function based on userchoices
+			  if (choices.userSelection[0] === '1') {
+			  	 console.log('1');
+			  	 //function that 
+	  	  } else if (choices.userSelection[0] === '2') {
+	  	  	console.log('2');
+	  	  } else if (choices.userSelection[0] === '3') {
+	  	  	console.log('3');
+		  } else if (choices.userSelection[0] === '4') {
+	  	  	console.log('4');
+		  } else if (choices.userSelection[0] === '5') {
+	  	  	console.log('5');
+	  	  } else if (choices.userSelection[0] === '6') {
+	  	  	console.log('6');
+	  	  } else if (choices.userSelection[0] === '7') {
+	  	  	console.log('7');
+	  	  } else if (choices.userSelection[0] === '8') {
+	  	  	console.log('8');
+	  	  } else if (choices.userSelection[0] === '9') {
+	  	  	console.log('9');
+	  	  } else if (choices.userSelection[0] === '10') {
+	  	  	console.log('10');
+	  	  	}else if (choices.userSelection[0] === 'exit') {
+		  	console.log('Your session has ended. Come back soon!');
+		  }
+	});
+
 //then prompts the user the for id of the product they would like to buy
 
 //then prompts the user for the quantity they would like to buy
