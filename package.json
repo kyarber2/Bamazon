@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/kyarber2/Bamazon#readme",
   "dependencies": {
+    "express": "^4.16.2",
     "inquirer": "^3.3.0",
     "mysql": "^2.15.0"
   }
