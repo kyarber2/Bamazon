@@ -8,7 +8,7 @@ var fs = require("fs");
 //displays the products in the table
 var express = require('express'),
     app = express(),
-  	connection = require('./connection.js');
+    connection = require('./connection.js');
 
 app.get('/bamazon_DB', function (req, res) {
     connection.query('SELECT * FROM products', function(err, rows, fields)
@@ -46,7 +46,7 @@ readProducts();
 
 //then prompts the user the for id of the product they would like to buy
 inquirer.prompt([
-	{
+  {
     type: "checkbox",
     name: "userSelection",
     message: "Which product would you like to purchase?",
@@ -62,60 +62,60 @@ inquirer.prompt([
     '9',
     '10',
     'exit']
-	}
+  }
 ]).then(function(choices) {
-	console.log(choices);
+  console.log(choices);
   // if/then function based on userchoices
-			  if (choices.userSelection[0] === '1') {
-			  	 console.log('1');
-			  	 quantitySelector();
-			  	 //function that 
-	  	  } else if (choices.userSelection[0] === '2') {
-	  	  	console.log('2');
-	  	  	quantitySelector();
-	  	  } else if (choices.userSelection[0] === '3') {
-	  	  	console.log('3');
-	  	  	quantitySelector();
-		  } else if (choices.userSelection[0] === '4') {
-	  	  	console.log('4');
-	  	  	quantitySelector();
-		  } else if (choices.userSelection[0] === '5') {
-	  	  	console.log('5');
-	  	  	quantitySelector();
-	  	  } else if (choices.userSelection[0] === '6') {
-	  	  	console.log('6');
-	  	  	quantitySelector();
-	  	  } else if (choices.userSelection[0] === '7') {
-	  	  	console.log('7');
-	  	  	quantitySelector();
-	  	  } else if (choices.userSelection[0] === '8') {
-	  	  	console.log('8');
-	  	  	quantitySelector();
-	  	  } else if (choices.userSelection[0] === '9') {
-	  	  	console.log('9');
-	  	  	quantitySelector();
-	  	  } else if (choices.userSelection[0] === '10') {
-	  	  	console.log('10');
-	  	  	quantitySelector();
-	  	  	}else if (choices.userSelection[0] === 'exit') {
-		  	console.log('Your session has ended. Come back soon!');
-		  }
-	});
+        if (choices.userSelection[0] === '1') {
+           console.log('1');
+           quantitySelector();
+           //function that 
+        } else if (choices.userSelection[0] === '2') {
+          console.log('2');
+          quantitySelector();
+        } else if (choices.userSelection[0] === '3') {
+          console.log('3');
+          quantitySelector();
+      } else if (choices.userSelection[0] === '4') {
+          console.log('4');
+          quantitySelector();
+      } else if (choices.userSelection[0] === '5') {
+          console.log('5');
+          quantitySelector();
+        } else if (choices.userSelection[0] === '6') {
+          console.log('6');
+          quantitySelector();
+        } else if (choices.userSelection[0] === '7') {
+          console.log('7');
+          quantitySelector();
+        } else if (choices.userSelection[0] === '8') {
+          console.log('8');
+          quantitySelector();
+        } else if (choices.userSelection[0] === '9') {
+          console.log('9');
+          quantitySelector();
+        } else if (choices.userSelection[0] === '10') {
+          console.log('10');
+          quantitySelector();
+          }else if (choices.userSelection[0] === 'exit') {
+        console.log('Your session has ended. Come back soon!');
+      }
+  });
 
 //then prompts the user for the quantity they would like to buy
 
 var quantitySelector = function(){
-	inquirer.prompt([
-		{
-	    type: "string",
-	    name: "quantity",
-	    message: "How many would you like to purchase?",
-	    input: ''
-		}
-	]).then(function(input) {
-		console.log(input);
-	 //function to compare total requested with total in database
-		});
+  inquirer.prompt([
+    {
+      type: "string",
+      name: "quantity",
+      message: "How many would you like to purchase?",
+      input: ''
+    }
+  ]).then(function(input) {
+    console.log(input);
+   //function to compare total requested with total in database
+    });
 }
 
 
